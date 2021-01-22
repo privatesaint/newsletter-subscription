@@ -29,6 +29,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 // routes
+app.get("/", (req, res, next) => {
+  res.json({
+    message: "Welcome to newsletter portal",
+  });
+});
 app.use("/api", routes);
 
 // Handle invalid routes
